@@ -5,7 +5,13 @@ import javax.xml.bind.annotation.XmlTransient;
 
 public class Comment
 {
-  private Integer commentid;
+  @Override
+	public String toString() {
+		return "Comment [commentid=" + commentid + ", comment=" + comment + ", createdDate=" + createdDate + ", author="
+				+ author + ", Auth=" + Auth + "]";
+	}
+
+private Integer commentid;
   private String comment;
   private Date createdDate;
   private String author;

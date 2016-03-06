@@ -6,7 +6,62 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Profile
 {
-  private Integer profileId;
+  @Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Dob == null) ? 0 : Dob.hashCode());
+		result = prime * result + ((profileId == null) ? 0 : profileId.hashCode());
+		result = prime * result + ((profileUserFname == null) ? 0 : profileUserFname.hashCode());
+		result = prime * result + ((profileUserId == null) ? 0 : profileUserId.hashCode());
+		result = prime * result + ((profileUserLname == null) ? 0 : profileUserLname.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Profile other = (Profile) obj;
+		if (Dob == null) {
+			if (other.Dob != null)
+				return false;
+		} else if (!Dob.equals(other.Dob))
+			return false;
+		if (profileId == null) {
+			if (other.profileId != null)
+				return false;
+		} else if (!profileId.equals(other.profileId))
+			return false;
+		if (profileUserFname == null) {
+			if (other.profileUserFname != null)
+				return false;
+		} else if (!profileUserFname.equals(other.profileUserFname))
+			return false;
+		if (profileUserId == null) {
+			if (other.profileUserId != null)
+				return false;
+		} else if (!profileUserId.equals(other.profileUserId))
+			return false;
+		if (profileUserLname == null) {
+			if (other.profileUserLname != null)
+				return false;
+		} else if (!profileUserLname.equals(other.profileUserLname))
+			return false;
+		return true;
+	}
+
+@Override
+	public String toString() {
+		return "Profile [profileId=" + profileId + ", profileUserId=" + profileUserId + ", profileUserFname="
+				+ profileUserFname + ", profileUserLname=" + profileUserLname + ", Dob=" + Dob + "]";
+	}
+
+private Integer profileId;
   private String profileUserId;
   private String profileUserFname;
   private String profileUserLname;

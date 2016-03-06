@@ -74,8 +74,8 @@ public class MessageServices
   {
     messageservieceMap.remove(Id);
     this.deleteList.add(Id);
-    System.out.println(this.deleteList);
-    return new Message();
+    //System.out.println(this.deleteList);
+    return new Message(Id,"unkown", "unkown");
   }
   
   public void getservices()

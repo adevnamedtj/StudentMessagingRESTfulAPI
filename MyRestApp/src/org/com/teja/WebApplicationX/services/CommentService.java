@@ -11,7 +11,11 @@ public class CommentService
 {
   private Map<Integer, Message> messagesmap = Dao.getMessageMap();
   
-  public List<Comment> getMessageComments(Integer messageId)
+  public Map<Integer, Message> getMessagesmap() {
+	return messagesmap;
+}
+
+public List<Comment> getMessageComments(Integer messageId)
   {
     Map<Integer, Comment> CommentsMapOfMessage = ((Message)this.messagesmap.get(messageId)).getCommentsMap();
     return new ArrayList(CommentsMapOfMessage.values());
